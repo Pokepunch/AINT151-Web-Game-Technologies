@@ -1,0 +1,40 @@
+#container {
+	margin: 0 auto;
+	width: 900px;
+}
+
+#header {
+	width: inherit;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	background-color: lightgrey;
+}
+
+.leftitem {
+  width: 600px;
+  height: 100px;
+  line-height: 100px;
+  float: left;
+  margin: 10px;
+  margin-left: 0;
+  margin-bottom: 0;
+	text-align: center;
+	background-color: lightgrey;
+}
+
+#rightmenu {
+  width: 290px;
+  height: 430px;
+  line-height: 430px;
+  float: right;
+  margin: 10px;
+  margin-left: 0;
+  margin-right: 0;
+	text-align: center;
+	background-color: lightgrey;
+}
+
+.clear {
+	clear: both;
+}

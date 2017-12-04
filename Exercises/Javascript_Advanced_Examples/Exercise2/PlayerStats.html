@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Advanced Javascript - Player Stats</title>
+<script>
+function OnLoad()
+{
+	var playerName = localStorage.getItem("playername");
+	var playerHealth = localStorage.getItem("playerhealth");
+	var playerColour = localStorage.getItem("playercolour");
+	document.getElementById('playername').innerHTML = playerName;
+	document.getElementById('playerhealth').innerHTML = playerHealth;
+	document.getElementById('playercolour').style.backgroundColor = playerColour;
+}
+</script>
+</head>
+
+<body onLoad="OnLoad()">
+
+    <h1 id="playername">name</h1>
+	<p id="playerhealth">health</p>
+	<div id="playercolour" style="width:50px;height:50px;background-color:#000;"></div>
+
+</body>
+</html>

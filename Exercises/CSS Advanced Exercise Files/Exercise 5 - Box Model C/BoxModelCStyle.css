@@ -1,0 +1,51 @@
+#container {
+	margin: 0 auto;
+	width: 900px;
+}
+
+#header {
+	width: inherit;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	background-color: lightgrey;
+}
+
+.leftboxbox {
+  width: 81px;
+  height: 81px;
+  line-height: 81px;
+  text-align: center;
+  float: left;
+  margin: 10px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  background-color: lightgrey;
+}
+
+.box {
+  width: 81px;
+  height: 81px;
+  line-height: 81px;
+  text-align: center;
+  float: left;
+  margin: 10px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  background-color: lightgrey;
+}
+
+#footer {
+	width: inherit;
+	height: 30px;
+	line-height: 30px;
+  margin-top: 10px;
+	text-align: center;
+
+	background-color: lightgrey;
+}
+
+.clear {
+	clear: both;
+}
