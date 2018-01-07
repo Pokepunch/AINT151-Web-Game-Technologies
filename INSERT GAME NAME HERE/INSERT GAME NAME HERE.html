@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html onclick="body_OnClick()">
+  <head>
+    <meta charset="UTF-8">
+    <title>[INSERT GAME NAME HERE]</title>
+    <link rel="stylesheet" href="TextTest.css" />
+  	<script src="scripts/Main.js"></script>
+    <script src="scripts/Choices.js"></script>
+  	<script src="scripts/WordBank.js"></script>
+  </head>
+
+  <body style="background-color:#7d7d7d;">
+
+    <div id="container">
+      <div id="header"></div>
+<!-- <img id="background" src="art/Monitor.png"/> -->	 
+      <div id="maincontentTop">
+          <div id="maincontent"></div>
+      </div>
+      <div class="clear"></div>
+	    <input id="footer" type="text" oninput="footer_OnInput()" onselect="footer_OnSelect()" spellcheck="false" maxlength="77"/>
+	    <input id="footerTop" disabled="disabled" type="text" value="> "  />
+	    <div id="cursor">&nbsp&nbsp_</div>
+    </div>
+
+  </body>
+</html>

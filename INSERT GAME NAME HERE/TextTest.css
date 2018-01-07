@@ -1,0 +1,112 @@
+#container {
+	margin: 0 auto;
+	display: block;
+	font-size: 20px;
+	font-family: monospace;
+	width: 900px;
+}
+
+#background {
+	height: 1000px;
+	width: 1000px;
+	bottom: 0px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: -1;
+}
+
+#header {
+	width: inherit;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+/*	background-color: lightgrey;
+*/
+}
+
+#maincontentTop {
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 20px;
+	user-select: none;
+	background-color: black;
+	overflow: hidden;
+}
+
+#maincontent {
+	width: 900px;
+	height: 500px;
+	margin: 10px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 10px;
+	padding: 10px;
+	padding-top: 0px;
+	color: white;
+	background-color: black;
+	user-select: none;
+	overflow-y: scroll;
+}
+
+
+#footer {
+	width: 890px;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+	border: hidden;
+	outline: none;
+	font-size: 20px;
+	font-family: monospace;
+	margin-top: 0px;
+	background-color: transparent;
+	color: transparent;
+	user-select: none;
+	position: absolute;
+	z-index: 0;
+}
+
+#footer::selection{
+	background: transparent;
+}
+
+#footerTop {
+	width: 890px;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+	padding-top: 10px;
+	border: hidden;
+	outline: none;
+	font-size: 20px;
+	font-family: monospace;
+	margin-top: 0px;
+	color: white;
+	background-color: black;
+	user-select: none;
+	position: absolute;
+	z-index: -1;
+}
+
+#cursor {
+	width: 890px;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+	padding-top: 10px;
+	background: transparent;
+	color: white;
+	user-select: none;
+	position: absolute;
+	z-index: 1;
+}
+
+.clear {
+	clear: both;
+	user-select: none;
+}
