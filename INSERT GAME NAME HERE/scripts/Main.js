@@ -85,8 +85,6 @@ function TextLoader(text)
 	{
 		loadTimer = window.setTimeout(function () { TextLoader(text) }, 10);
 	}
-	var bar = document.getElementById('maincontent');
-	document.getElementById('maincontent').scrollTop = bar.scrollHeight;
 }
 
 /*
@@ -211,6 +209,11 @@ function ProcessInput(input)
 			{
 				roomIndex = previousRoom;
 				previousRoom = RoomArray.indexOf(room);
+			}
+			else if ("loop" in RoomArray[roomIndex] && RoomArray[roomIndex].loop > 0)
+			{
+				RoomArray[roomIndex].loop -= 1;
+				return RoomArray[roomIndex].textAlt;
 			}
 			else
 			{

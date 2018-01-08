@@ -1,6 +1,6 @@
 var RoomArray = [
 	{
-		text: "Welcome to [INSERT GAME NAME HERE]! This is a text based adventure game. <br/> You play by entering a Verb and an object you wish to interact with, for example 'Open Door'. <br/>After interacting with an object enter 'Go Back' to exit to the scene. <br/>Type and enter 'Start Game' to begin!",
+		text: "Welcome to [INSERT GAME NAME HERE]! This is a text based adventure game. <br/> You play by entering a Verb and an Object you wish to interact with, for example 'Open Door'. <br/>There may be a few exceptions to this rule however. <br/>After interacting with an object enter 'Go Back' to exit to the scene. <br/>Type and enter 'Start Game' to begin!",
 		choices: [
 			{
 				command: 'game',
@@ -31,7 +31,7 @@ var RoomArray = [
 		]
 	},
 	{
-		text: "The bookshelf is packed to the brim with books, full of whisical stories and infinite knowledge. If that wasn't impressive enough every book is the same size and all sit flush against back of the shelf, bar one. This book is noticeably ajar, sticking out in an aggravating matter.",
+		text: "The bookshelf is packed to the brim with books, full of whisical stories and infinite knowledge. <br/>If that wasn't impressive enough every book is the same size and all sit flush against back of the shelf, bar one. <br/>This book is noticeably ajar, sticking out from the rest.",
 		choices: [
 			{
 				command: 'back',
@@ -53,7 +53,7 @@ var RoomArray = [
 			{
 				command: 'back',
 				verbs: ['go'],
-				index: 'previousRoom'
+				index: 1
 			}
 		]
 	},
@@ -201,7 +201,7 @@ var RoomArray = [
 				verbs: ['use', 'go'],
 				index: 15
 			}
-		]	
+		]
 	},
 	{
 		intro: "The bulb lights up green followed by a short buzz. Suddenly the door slides open. You walk through with the door shutting behind you.",
@@ -217,7 +217,7 @@ var RoomArray = [
 	{
 		text: "You start going down the stairs. 6 steps, round a corner. 6 more steps.",
 		textAlt: "You keep going down the stairs. 6 steps, round a corner. 6 more steps.",
-		loop: 0,
+		loop: 2,
 		choices: [
 			{
 				command: 'stairs',
