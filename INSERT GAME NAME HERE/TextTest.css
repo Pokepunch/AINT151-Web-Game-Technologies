@@ -1,12 +1,17 @@
 body {
-	background-color: black;
+	transition: background-color 6s cubic-bezier(1, 1, 1, 1), color 2s cubic-bezier(1, 1, 1, 1);
+	transition-delay: 0s;
+	--bg-color: black;
+	--text-color: white;
+	background-color: var(--bg-color);
+	color: var(--text-color);
 }
 
 #container {
 	margin: 0 auto;
 	font-size: 20px;
 	font-family: monospace;
-	color: white;
+	color: var(--text-color);
 }
 
 /*
@@ -58,10 +63,10 @@ body {
 	padding-left: 10px;
 	border: hidden;
 	outline: none;
-	background-color: black;
+	background-color: var(--bg-color);
 	font-size: 20px;
 	font-family: monospace;
-	color: white;
+	color: var(--text-color);
 	user-select: none;
 	position: absolute;
 	z-index: -1;

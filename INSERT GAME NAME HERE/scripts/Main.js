@@ -18,10 +18,15 @@ var blink;
 var inputText = "";
 var seeCursor = false;
 
+// Other
+var bgColor;
+var textColor;
+
 /*
 	Array storing variables used through the game
 	0 = Got code from book
 	1 = Exited room using window
+	2 = Got Screwdriver
 */
 var storyVariables = [];
 
@@ -73,18 +78,17 @@ function TextLoader(text)
 		document.getElementById('maincontent').innerHTML += text;
 		skipTextLoad = false;
 		loadTimer = 0;
-		FocusFooter()
 	}
 	else if (text.length == 0)
 	{
 		window.clearTimeout(loadTimer);
 		loadTimer = 0;
-		FocusFooter()
 	}
 	else
 	{
 		loadTimer = window.setTimeout(function () { TextLoader(text) }, 10);
 	}
+	FocusFooter();
 }
 
 /*
@@ -145,6 +149,8 @@ function footer_OnEnter()
 	{
 		document.getElementById('maincontent').innerHTML = "";
 		roomIndex = 0;
+		doorCode = Math.floor(Math.random() * 9000) + 1000;
+		storyVariables = [];
 		TextLoader(RoomArray[roomIndex].text)
 		document.getElementById('footer').value = "";
 		document.getElementById('footerTop').value = "> ";
@@ -173,7 +179,7 @@ function ProcessInput(input)
 	var words = input.split(" ");
 	if (words.length != 2)
 	{
-		if (!isNaN(input) && roomIndex == 12)
+		if (!isNaN(input) && roomIndex == 12 || roomIndex == 11)
 		{
 			if (input == doorCode)
 			{
@@ -210,9 +216,9 @@ function ProcessInput(input)
 				roomIndex = previousRoom;
 				previousRoom = RoomArray.indexOf(room);
 			}
-			else if ("loop" in RoomArray[roomIndex] && RoomArray[roomIndex].loop > 0)
+			else if ("loop" in room.choices[choiceNum] && room.choices[choiceNum].loop > 0)
 			{
-				RoomArray[roomIndex].loop -= 1;
+				room.choices[choiceNum].loop -= 1;
 				return RoomArray[roomIndex].textAlt;
 			}
 			else
@@ -241,6 +247,11 @@ function ProcessInput(input)
 			if ("variableSet" in RoomArray[roomIndex])
 			{
 				storyVariables[RoomArray[roomIndex].variableSet] = 1;
+			}
+			if ("fade" in RoomArray[roomIndex])
+			{
+				FadeTo(RoomArray[roomIndex].fade[0], RoomArray[roomIndex].fade[1]);
+				delete RoomArray[roomIndex].fade;
 			}
 			if ("intro" in RoomArray[roomIndex])
 			{
@@ -303,6 +314,14 @@ function ProcessVerb(room, verb, choiceNum)
 	return false;
 }
 
+function FadeTo(background, text)
+{
+	document.body.style.setProperty('background-color', background);
+	document.body.style.setProperty('--bg-color', "#" + background);
+	document.body.style.setProperty('color', text);
+	document.body.style.setProperty('--text-color', "#" + text);
+}
+
 function UpdateCursorPos()
 {
 	var fakeText = "";
@@ -318,6 +337,7 @@ function UpdateCursorPos()
 function FocusFooter()
 {
 	document.getElementById('footer').focus();
+	window.scrollTo(0, document.body.scrollHeight)
 }
 
 function footer_OnSelect()
